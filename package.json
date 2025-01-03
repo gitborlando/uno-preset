@@ -1,0 +1,19 @@
+{
+	"name": "uno-preset",
+	"version": "1.0.0",
+	"description": "",
+	"main": "uno.config.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"type": "module",
+	"devDependencies": {
+		"unocss": "^0.60.0",
+		"colord": "^3.0.0",
+		"typescript": "^5.5.4",
+		"@colord/plugin-names": "^3.0.0"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

@@ -1,3 +1,4 @@
 {
-	"cSpell.words": ["trbl"]
+	"cSpell.words": ["LTRB", "trbl", "unocss"],
+	"typescript.tsdk": "node_modules/typescript/lib"
 }

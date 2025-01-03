@@ -1,4 +1,5 @@
 import presetRemToPx from '@unocss/preset-rem-to-px'
+import { colord } from 'colord'
 import {
 	Rule,
 	UserShortcuts,
@@ -7,10 +8,6 @@ import {
 	transformerCompileClass,
 	transformerVariantGroup,
 } from 'unocss'
-
-const ifExist = (val: string) => {
-	return val !== undefined ? `-${val}` : ''
-}
 
 const shortcuts: UserShortcuts = [
 	[
@@ -77,11 +74,10 @@ const border: Rule<object> = [
 				border: `${width}px solid ${normalColor(color)}`,
 			}
 		}
-
 		return directions.split(',').reduce(
 			(acc, direction) => ({
 				...acc,
-				[`border-${normal(direction)}`]: `${width}px solid ${normalColor(color)}`,
+				[`border-${mapLTRB(direction)}`]: `${width}px solid ${normalColor(color)}`,
 			}),
 			{}
 		)
@@ -89,7 +85,7 @@ const border: Rule<object> = [
 ]
 
 const boxShadow: Rule<object> = [
-	/shadow-(\d+)-(\d+)-(\d+)-(\d+)-([^-]+)-?(inset)?/,
+	/shadow-(-?\d+)-(-?\d+)-(-?\d+)-(-?\d+)-([^-]+)-?(inset)?/,
 	([_, x, y, blur, spread, color, inset]) => ({
 		'box-shadow': `${inset ? 'inset ' : ''}${x}px ${y}px ${blur}px ${spread}px ${normalColor(
 			color
@@ -104,16 +100,17 @@ export default defineConfig({
 	rules: [border, boxShadow],
 })
 
-function normal(val: string) {
+function mapLTRB(val: string) {
 	if (val === 'r') return 'right'
 	if (val === 'l') return 'left'
 	if (val === 't') return 'top'
 	if (val === 'b') return 'bottom'
-	if (val === 'fit') return 'fit-content'
-	if (!/\D/.test(val)) return val + 'px'
-	return val
 }
 
 function normalColor(val: string) {
-	return val
+	try {
+		return colord(val).toRgbString()
+	} catch {
+		return val
+	}
 }
