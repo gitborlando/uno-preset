@@ -1,0 +1,37 @@
+{
+  "name": "gitborlando-preset",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r build"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx pretty-quick --staged"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.11",
+    "prettier": "^3.4.2",
+    "pretty-quick": "^4.0.0",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.5.4",
+    "unocss": "^0.60.0"
+  },
+  "prettier": {
+    "printWidth": 90,
+    "jsxBracketSameLine": true,
+    "useTabs": false,
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "bracketSpacing": false
+  }
+}
