@@ -8,5 +8,5 @@ export default defineConfig({
       red: 'rgb(205, 25, 0)',
     },
   },
-  presets: [presetUno(), unoPresetGitborlando, presetRemToPx({baseFontSize: 4})],
+  presets: [presetUno(), unoPresetGitborlando(), presetRemToPx({baseFontSize: 4})],
 })

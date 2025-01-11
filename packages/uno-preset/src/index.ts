@@ -1,6 +1,6 @@
 import {definePreset, UserShortcuts} from 'unocss'
 
-export default definePreset(() => {
+const unoPresetGitborlando = definePreset(() => {
   const shortcuts: UserShortcuts = [
     [
       /^text-([^-]+)-?([^-]+)?-?([^-]+)?$/,
@@ -71,6 +71,7 @@ export default definePreset(() => {
       ([_, x, y, blur, spread, color, inset]) =>
         `shadow-[${inset ? 'inset_' : ''}${x}px_${y}px_${blur}px_${spread}px] shadow-${color}`,
     ],
+    [/^pointer$/, () => 'cursor-pointer'],
   ]
 
   return {
@@ -78,3 +79,5 @@ export default definePreset(() => {
     shortcuts,
   }
 })
+
+export default unoPresetGitborlando

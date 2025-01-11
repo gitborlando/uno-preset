@@ -10,7 +10,7 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "unbuild --watch",
+    "dev": "unbuild",
     "build": "unbuild"
   },
   "keywords": [],

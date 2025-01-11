@@ -11,7 +11,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "pnpm -r build"
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "changeset": "changeset"
   },
   "simple-git-hooks": {
     "pre-commit": "npx pretty-quick --staged"
