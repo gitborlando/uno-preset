@@ -2,6 +2,9 @@ import {definePreset, UserShortcuts} from 'unocss'
 
 const unoPresetGitborlando = definePreset(() => {
   const shortcuts: UserShortcuts = [
+    [/^pointer$/, () => 'cursor-pointer'],
+    [/^gap(?:-(\d+))(?:-(\d+))$/, ([_, x, y]) => `gap-x-${x} gap-y-${y}`],
+    [/^p(?:-(\d+))(?:-(\d+))$/, ([_, x, y]) => `px-${x} py-${y}`],
     [
       /^text-([^-]+)-?([^-]+)?-?([^-]+)?$/,
       ([_, size, color, weight]) => {
@@ -58,7 +61,7 @@ const unoPresetGitborlando = definePreset(() => {
       },
     ],
     [
-      /^bd-(\d+)-([^-]+)-?([trbl]+$)?$/,
+      /^bd(?:-(\d+))?(?:-([^-]+))?(?:-([trbl]+))?$/,
       ([_, width = 1, color, directions]) => {
         if (!directions) return `b-${width} b-${color} b-solid`
         return [...directions].reduce((acc, direction) => {
@@ -71,7 +74,6 @@ const unoPresetGitborlando = definePreset(() => {
       ([_, x, y, blur, spread, color, inset]) =>
         `shadow-[${inset ? 'inset_' : ''}${x}px_${y}px_${blur}px_${spread}px] shadow-${color}`,
     ],
-    [/^pointer$/, () => 'cursor-pointer'],
   ]
 
   return {
