@@ -1,5 +1,11 @@
 # @gitborlando/uno-preset
 
+## 1.0.3
+
+### Patch Changes
+
+- 3f9daf4: 新增gap和padding简写规则
+
 ## 1.0.2
 
 ### Patch Changes
