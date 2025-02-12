@@ -1,5 +1,11 @@
 # @gitborlando/uno-preset
 
+## 1.0.4
+
+### Patch Changes
+
+- 43f4858: 修改了lay-c和lay-v的简写
+
 ## 1.0.3
 
 ### Patch Changes
