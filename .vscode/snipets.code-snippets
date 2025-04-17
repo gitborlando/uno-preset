@@ -32,12 +32,11 @@
     "scope": "typescriptreact",
     "body": [
       "import { ComponentPropsWithRef, forwardRef } from 'react'",
-      "import { Flex } from 'src/view/ui-utility/widget/flex'",
       "",
       "export type I$1${TM_FILENAME_BASE} = ComponentPropsWithRef<'div'> & {}",
       "",
       "export const $1${TM_FILENAME_BASE} = forwardRef<HTMLDivElement, I$1${TM_FILENAME_BASE}>(({ className, ...rest }, ref) => {",
-      "  return <Flex className='' {...rest} ref={ref}></Flex>",
+      "  return <div className='' {...rest} ref={ref}></div>",
       "})",
     ],
     "description": "Widget",

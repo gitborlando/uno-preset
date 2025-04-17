@@ -17,6 +17,10 @@ export const App = observer(({}) => {
             </div>
           </div>
         </div>
+        <div className='wh-60 lay-c-col gap-2 bg-gray/40'>
+          <div className='fit-0-0 bg-red'>上</div>
+          <div className='fit-0-0 bg-blue'>下</div>
+        </div>
       </div>
     </div>
   )
