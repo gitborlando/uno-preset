@@ -37,7 +37,7 @@ const unoPresetGitborlando = definePreset(() => {
         if (direction === 'h')
           return `flex items-center${justify ? ` justify-${justify}` : ''}`
         if (direction === 'v')
-          return `flex items-center flex-col${justify ? ` items-${justify}` : ''}`
+          return `flex flex-col items-${justify ? justify : 'center'}`
         if (direction === 'c') return `flex items-center justify-center`
       },
     ],
