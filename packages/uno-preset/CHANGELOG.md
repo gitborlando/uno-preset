@@ -1,5 +1,11 @@
 # @gitborlando/uno-preset
 
+## 1.0.5
+
+### Patch Changes
+
+- e0f77aa: 修复lay-v规则
+
 ## 1.0.4
 
 ### Patch Changes
