@@ -1,5 +1,11 @@
 # @gitborlando/uno-preset
 
+## 1.0.6
+
+### Patch Changes
+
+- b193317: 合并absolute和fixed
+
 ## 1.0.5
 
 ### Patch Changes
