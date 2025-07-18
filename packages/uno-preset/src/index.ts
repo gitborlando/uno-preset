@@ -12,23 +12,14 @@ const unoPresetGitborlando = definePreset(() => {
       },
     ],
     [
-      /^abs-([^-]+)-([^-]+)-?(lt|lb|rt|rb)?$/,
-      ([_, x, y, direction]) => {
-        if (!direction) return `absolute left-${x} top-${y}`
-        if (direction === 'lt') return `absolute left-${x} top-${y}`
-        if (direction === 'lb') return `absolute left-${x} bottom-${y}`
-        if (direction === 'rt') return `absolute right-${x} top-${y}`
-        if (direction === 'rb') return `absolute right-${x} bottom-${y}`
-      },
-    ],
-    [
-      /^fixed-([^-]+)-([^-]+)-?(lt|lb|rt|rb)?$/,
-      ([_, x, y, direction]) => {
-        if (!direction) return `fixed left-${x} top-${y}`
-        if (direction === 'lt') return `fixed left-${x} top-${y}`
-        if (direction === 'lb') return `fixed left-${x} bottom-${y}`
-        if (direction === 'rt') return `fixed right-${x} top-${y}`
-        if (direction === 'rb') return `fixed right-${x} bottom-${y}`
+      /^(abs|fixed)-([^-]+)-([^-]+)-?(lt|lb|rt|rb)?$/,
+      ([_, type, x, y, direction]) => {
+        const position = type === 'fixed' ? 'fixed' : 'absolute'
+        if (!direction) return `${position} left-${x} top-${y}`
+        if (direction === 'lt') return `${position} left-${x} top-${y}`
+        if (direction === 'lb') return `${position} left-${x} bottom-${y}`
+        if (direction === 'rt') return `${position} right-${x} top-${y}`
+        if (direction === 'rb') return `${position} right-${x} bottom-${y}`
       },
     ],
     [
